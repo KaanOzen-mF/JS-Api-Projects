@@ -1,0 +1,35 @@
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(82, 82, 82);
+}
+
+nav {
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-left: 12px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#post-container {
+  padding: 24px 24px 24px 12px;
+  width: 50%;
+  color: aliceblue;
+}
+
+#post-container h2 {
+  font-size: 32px;
+}
+
+#post-container p {
+  font-size: 16px;
+}
