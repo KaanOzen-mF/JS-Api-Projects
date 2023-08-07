@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#get-request-btn {
+  height: 48px;
+  border: none;
+  padding: 12px;
+  background-color: black;
+  color: bisque;
+  border-radius: 48px;
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.99);
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.99);
+  -moz-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.99);
+}
+
+#get-request-btn:hover {
+  background-color: beige;
+  color: black;
+}
