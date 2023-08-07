@@ -1,5 +1,5 @@
 # JS-Api-Projects
-This repo contains js api examples
+This repo contains js API examples
 In this project covered 5 topics which are
 - Server & Clients
 - Request/response cycle
