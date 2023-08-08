@@ -16,6 +16,7 @@ nav {
 
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -32,4 +33,38 @@ section {
 
 #post-container p {
   font-size: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  color: aliceblue;
+}
+
+form > button {
+  width: 20%;
+  align-self: center;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 6px;
+}
+
+form > button:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+form > label {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+form > textarea,
+input {
+  background-color: black;
+  color: aliceblue;
 }
