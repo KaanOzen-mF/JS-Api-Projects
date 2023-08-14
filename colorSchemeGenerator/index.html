@@ -10,7 +10,7 @@
     <main>
       <div class="color-picker-container">
         <div class="color-picker-header">
-          <form>
+          <form id="color-form">
             <select name="colors" id="color">
               <option value="#FF0000" style="background-color: red"></option>
               <option value="#FF7F00" style="background-color: orange"></option>
@@ -29,32 +29,13 @@
               <option value="complement">Complement</option>
               <option value="analogic-complement">Analogic Complement</option>
               <option value="triad">Triad</option>
-              <option value="quand">Quand</option>
+              <option value="quad">Quad</option>
             </select>
 
-            <button id="get-scheme-button">Get Scheme</button>
+            <button id="get-scheme-button" type="submit">Get Scheme</button>
           </form>
         </div>
-        <div class="color-picker-body">
-          <div class="color-container" style="background-color: red">
-            <div class="color-code">#FF0000</div>
-          </div>
-          <div class="color-container" style="background-color: orange">
-            <div class="color-code">#FFA500</div>
-          </div>
-          <div class="color-container" style="background-color: yellow">
-            <div class="color-code">#FFFF00</div>
-          </div>
-          <div class="color-container" style="background-color: green">
-            <div class="color-code">#008000</div>
-          </div>
-          <div class="color-container" style="background-color: blue">
-            <div class="color-code">#0000FF</div>
-          </div>
-          <div class="color-container" style="background-color: indigo">
-            <div class="color-code">#4B0082</div>
-          </div>
-        </div>
+        <div id="color-picker-body"></div>
       </div>
     </main>
     <script src="index.js"></script>
