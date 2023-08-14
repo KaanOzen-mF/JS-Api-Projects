@@ -38,6 +38,12 @@ body {
   margin-right: 16px;
 }
 
+#color:hover {
+  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+}
+
 #mode {
   margin-right: 16px;
   font-size: 18px;
@@ -59,7 +65,7 @@ body {
   -moz-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
 }
 
-.color-picker-body {
+#color-picker-body {
   display: flex;
   flex-direction: row;
   margin-top: 12px;
@@ -73,6 +79,13 @@ body {
   flex-direction: column;
   justify-content: end;
 }
+
+.color-container:hover {
+  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+}
+
 .color-code {
   align-self: center;
   padding: 12px;
