@@ -2,4 +2,83 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: antiquewhite;
+}
+
+.color-picker-container {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.color-picker-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.color-picker-header form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#color {
+  padding-left: 48px;
+  font-size: 48px;
+  background-color: white; /* Set default background color */
+  -webkit-appearance: none; /* Remove default appearance on Safari/Chrome */
+  -moz-appearance: none; /* Remove default appearance on Firefox */
+  appearance: none; /* Remove default appearance on modern browsers */
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+#mode {
+  margin-right: 16px;
+  font-size: 18px;
+}
+
+#get-scheme-button {
+  padding: 12px 6px;
+  font-size: 18px;
+  border-radius: 3px;
+  background-color: bisque;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+#get-scheme-button:hover {
+  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.75) inset;
+}
+
+.color-picker-body {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  height: 100%;
+}
+
+.color-container {
+  flex-basis: calc(50% - 12px); /* 50% width minus gap */
+  height: 100%; /* Set the height as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.color-code {
+  align-self: center;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bolder;
+  width: 50%;
+  background-color: white;
+  border: 2px solid black;
 }
