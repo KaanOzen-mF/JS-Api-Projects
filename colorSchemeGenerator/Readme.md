@@ -1,6 +1,6 @@
 # Color Scheme Generator
 
-A simple color scheme generator that allows you to search, discover, test and create beautiful color palettes for your projects. It uses an API called The Color API and it's been made as Solo project on Frontend Career Path. Based on user inputs, Color API will generate a color scheme for the user.
+A simple color scheme generator that allows you to search, discover, test and create beautiful color palettes for your projects. It uses an API called The Color API. Based on user inputs, Color API will generate a color scheme for the user.
 
 ## TABLE OF CONTENTS
 
@@ -21,13 +21,9 @@ Users are allowed to:
 
 ## [Screenshot](#screenshot)
 
-<!-- Insert your screenshot here -->
+![image](https://github.com/KaanOzen-mF/JS-Api-Projects/assets/74866163/a9cbe8ef-3df9-4300-ac11-64c07de7ad99)
 
 ## [Links](#links)
-
-<!-- Insert your links here -->
-
-## [Process](#process)
 
 ## [Overview](#process-overview)
 
