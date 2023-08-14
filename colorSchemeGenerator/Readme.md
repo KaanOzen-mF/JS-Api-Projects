@@ -29,10 +29,10 @@ Users are allowed to:
 
 ## [Process](#process)
 
-### [Overview](#process-overview)
-
-<!-- Overview of your process -->
+## [Overview](#process-overview)
 
 ## [Built With](#built-with)
 
-<!-- Technologies or tools used -->
+- Asynchronous JavaScript
+- Semantic HTML5 markup
+- Flexbox
