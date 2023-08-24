@@ -3,7 +3,14 @@ const movieSearchInput = document.getElementById("movie-search");
 const searchButton = document.getElementById("search-button");
 const iconContainer = document.getElementById("icon-container");
 const movieContainer = document.getElementById("main-section");
+const mainSection = document.getElementById("main-section");
+const watchlistSection = document.getElementById("watchlist-section");
+const watchlistContainer = document.getElementById("watchlist-container");
+const addWatchlistBtn = document.getElementById("watchlist-add-button");
+const watchlistBtn = document.getElementById("watchlist");
 
+let movieArray = [];
+let watchlist = [];
 //Fetch API function, it needs movie name as parameter
 const fetchApiData = async (movieName) => {
   //Try fetch API
@@ -28,28 +35,39 @@ const fetchApiData = async (movieName) => {
     return [];
   }
 };
-
 // Add an event listener to the search button
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault(); // Prevent the default form submission behavior
 
+  movieArray = [];
   const inputValue = movieSearchInput.value; // Get the value from the input field
   iconContainer.style.display = "none";
   // Reset the input field after search
   movieSearchInput.value = "";
-  // Fetch movie data and handle the response
-  const movieData = await fetchApiData(inputValue);
   // Check if movieData contains Search results
-
-  displayMovies(movieData);
+  try {
+    // Fetch movie data and handle the response
+    const movieData = await fetchApiData(inputValue);
+    if (movieData && movieData.length > 0) {
+      displayMovies(movieData);
+    } else {
+      console.log("No movies found.");
+      displayAlert();
+    }
+  } catch (error) {
+    console.log("Error fetching API data:", error);
+  }
 });
 
+//Display movie function
 const displayMovies = (movies) => {
   movieContainer.innerHTML = "";
-  movies.map((movie) => {
-    fetch(`http://www.omdbapi.com/?apikey=cf0fdf8&i=${movie.imdbID}`)
+  movies.map((movieDetail) => {
+    //Fetch movie detail according to movie name using movie name
+    fetch(`http://www.omdbapi.com/?apikey=cf0fdf8&i=${movieDetail.imdbID}`)
       .then((res) => res.json())
       .then((movie) => {
+        movieArray.push(movie);
         let movieHtml = `
           <div class="movie-container" id="movie-container">
             <img
@@ -69,7 +87,8 @@ const displayMovies = (movies) => {
                 <p class="movie-time">${movie.Runtime ? movie.Runtime : ""}</p>
                 <p class="movie-type">${movie.Genre ? movie.Genre : ""}</p>
                 <div class="watchlist-container">
-                  <img src="img/watchlistIcon.png" alt="" />
+                  
+                <button id="watchlist-add-btn" class="add-watchlist-button">+</button>
                   <p>Watchlist</p>
                 </div>
               </div>
@@ -84,6 +103,30 @@ const displayMovies = (movies) => {
           </div>
         `;
         movieContainer.innerHTML += movieHtml;
+        // Attach event listener to the created button
+        movieContainer
+          .querySelectorAll(".add-watchlist-button")
+          .forEach((button, index) => {
+            button.addEventListener("click", () => {
+              // Display the movie details for the clicked button
+              const selectedMovie = movieArray[index];
+              watchlist.push(selectedMovie);
+
+              //Save updated watchlist to local storage
+              saveToLocalStorage();
+
+              console.log(selectedMovie);
+            });
+          });
       });
+
+    const saveToLocalStorage = () => {
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    };
   });
+};
+//If there no film accoring to searching words display alert function
+const displayAlert = () => {
+  mainSection.innerHTML = "";
+  mainSection.innerHTML += `<div class="alert-text">Unable to find what you’re looking for. Please try another search.</div>`;
 };
