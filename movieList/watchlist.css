@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: whitesmoke;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover {
+  text-shadow: -2px 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/*Header Section Start*/
+header {
+  width: 50vw;
+  height: 14vw;
+  background-color: rgba(62, 62, 61, 0.9);
+  background-image: url("./img/Design.png");
+  background-position: right 35% bottom 80%;
+  background-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 64px;
+}
+
+#header-text-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+  margin: 42px 48px;
+  font-weight: 900;
+  text-shadow: -2px 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 3px;
+}
+/*Header Section End*/
+
+/*watchlist.html Section Start*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/*Watchlist Container Start*/
+.watchlist-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  width: 50%;
+  padding-left: 48px;
+}
+
+hr {
+  display: flex;
+  width: 50%;
+}
+/* Add this CSS to your existing styles */
+
+.movie-poster {
+  width: 25%;
+}
+.movie-text-container {
+  flex-grow: 1; /* Allow this container to take up the remaining space */
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.movie-title {
+  font-size: 18px;
+  font-weight: 900;
+}
+.remove-watchlist-button {
+  background-color: #ffffff;
+  border-radius: 48px;
+  display: inline-block;
+  cursor: pointer;
+  color: #44c767;
+  font-family: Impact;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin-right: 6px;
+}
+.remove-watchlist-button:hover {
+  background-color: #f54e00;
+  color: #ffffff;
+  transition: ease-in 0.1s;
+}
+.movie-imdb {
+  font-size: 12px;
+}
+.movie-title-container img {
+  margin: 0px 6px;
+}
+
+/*Movie Info Section Start*/
+.movie-info-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 600;
+  align-items: center;
+}
+.watchlist-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12px;
+}
+.movie-time {
+  padding-right: 12px;
+}
+.watchlist-container img {
+  margin-right: 6px;
+}
+/*Movie Info Section End*/
+
+/*Movie Plot Section Start*/
+.movie-explonation {
+  color: #a5a5a5;
+}
+
+.movie-explonation a {
+  text-decoration: none;
+  color: white;
+}
+/*Movie Plot Section End*/
+/*Watchlist Container End*/
+/*watchlist.html Section End*/
+
+.alert-text {
+  font-size: 24px;
+  color: #a5a5a5;
+  margin: 50%;
+  width: 100%;
+}
+
+.alert-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-weight: 600;
+}
+
+.alert-button-container button {
+  border-radius: 24px;
+  width: 42px;
+}
+
+.alert-button-container a {
+  color: black;
+  font-size: 32px;
+}
+
+.alert-button-container button:hover {
+  background-color: #44c767;
+  color: white;
+  transition: ease-out 0.3s;
+}
+
+.alert-button-container button:hover a {
+  color: white;
+}
