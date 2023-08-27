@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>
                   ${
                     movie.Plot ? movie.Plot : ""
-                  }<span><a href="">Read More</a></span>
+                  }<span><button class="read-more-btn">Read More</button></span>
                 </p>
               </div>
             </div>
@@ -47,6 +47,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Append the movie element to the watchlist section
       watchlistSection.appendChild(movieElement);
+
+      // Attach event listener to the created "Read More" buttons
+      watchlistSection
+        .querySelectorAll(".read-more-btn")
+        .forEach((button, index) => {
+          button.addEventListener("click", () => {
+            // Display the full movie plot or take any desired action
+            const selectedMovie = watchlistArray[index];
+            openPopup(selectedMovie);
+          });
+        });
+
+      // Attach event listener to the close button of the popup
+      const popupCloseButton = document.getElementById("popup-close-button");
+      popupCloseButton.addEventListener("click", closePopup);
+
+      // Add event listener to the remove button
+      const removeButton = movieElement.querySelector(
+        ".remove-watchlist-button"
+      );
+      // Remove from watchlist selected movie
+      removeButton.addEventListener("click", (e) => {
+        const movieIndex = e.target.dataset.index;
+
+        // Remove the movie from the watchlist array
+        watchlistArray.splice(movieIndex, 1);
+
+        // Update local storage with the modified watchlist array
+        localStorage.setItem("watchlist", JSON.stringify(watchlistArray));
+
+        // Remove the movie element from the DOM
+        watchlistSection.removeChild(movieElement);
+      });
     });
   } else {
     // Handle the case when there's no watchlist data in local storage
@@ -60,3 +93,37 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>`;
   }
 });
+
+// Function to open the pop-up and display movie details
+const openPopup = (movie) => {
+  const popupOverlay = document.getElementById("popup-overlay");
+  const popupContent = document.getElementById("popup-content");
+  const popupMovieDetails = document.getElementById("popup-movie-details");
+
+  popupMovieDetails.innerHTML = `
+    <h2>${movie.Title}</h2>
+    <p>Release Yer: ${movie.Released}</p>
+    <p>Runtime: ${movie.Runtime}</p>
+    <p>Genre: ${movie.Genre}</p>
+    <p>Director: ${movie.Director}</p>
+    <p>Writer: ${movie.Writer}</p>
+    <p>Actors: ${movie.Actors}</p>
+    <p>Country: ${movie.Country}</p>
+    <p>Awards: ${movie.Awards}</p>
+    <p>IMDb Rating: ${movie.imdbRating}</p>
+    <p>IMDb Votes: ${movie.imdbVotes}</p>
+    <p>Box Office: ${movie.BoxOffice}</p>
+    <p>${movie.Plot}</p>
+  `;
+
+  popupOverlay.style.display = "flex";
+
+  // Close the popup if the overlay is clicked
+  popupOverlay.addEventListener("click", closePopup);
+};
+
+// Function to close the pop-up
+const closePopup = () => {
+  const popupOverlay = document.getElementById("popup-overlay");
+  popupOverlay.style.display = "none";
+};
