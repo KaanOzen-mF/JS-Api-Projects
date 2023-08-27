@@ -1,13 +1,12 @@
 //Take the reference element of HTML
+//Input Reference
 const movieSearchInput = document.getElementById("movie-search");
+//Button References
 const searchButton = document.getElementById("search-button");
+const addWatchlistBtn = document.getElementById("watchlist-add-button");
+//Containers References
 const iconContainer = document.getElementById("icon-container");
 const movieContainer = document.getElementById("main-section");
-const mainSection = document.getElementById("main-section");
-const watchlistSection = document.getElementById("watchlist-section");
-const watchlistContainer = document.getElementById("watchlist-container");
-const addWatchlistBtn = document.getElementById("watchlist-add-button");
-const watchlistBtn = document.getElementById("watchlist");
 
 let movieArray = [];
 let watchlist = [];
@@ -101,7 +100,8 @@ const displayMovies = (movies) => {
               </div>
             </div>
           </div>
-        `;
+          <hr>
+          `;
         movieContainer.innerHTML += movieHtml;
         // Attach event listener to the created button
         movieContainer
@@ -114,19 +114,17 @@ const displayMovies = (movies) => {
 
               //Save updated watchlist to local storage
               saveToLocalStorage();
-
-              console.log(selectedMovie);
             });
           });
       });
-
+    //Local Storage save function
     const saveToLocalStorage = () => {
       localStorage.setItem("watchlist", JSON.stringify(watchlist));
     };
   });
 };
+
 //If there no film accoring to searching words display alert function
 const displayAlert = () => {
-  mainSection.innerHTML = "";
-  mainSection.innerHTML += `<div class="alert-text">Unable to find what you’re looking for. Please try another search.</div>`;
+  movieContainer.innerHTML = `<div class="alert-text">Unable to find what you’re looking for. Please try another search.</div>`;
 };
