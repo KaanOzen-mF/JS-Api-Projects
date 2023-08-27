@@ -11,6 +11,16 @@ body {
   color: whitesmoke;
   font-family: "Inter", sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:hover {
+  text-shadow: -2px 1px 3px rgba(255, 255, 255, 0.6);
+}
+
 /*Header Section  Start*/
 header {
   width: 50vw;
@@ -24,13 +34,16 @@ header {
   align-items: center;
 }
 
+header h1 {
+  font-size: 64px;
+}
 #header-text-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-around;
-  margin: 56px 48px;
+  margin: 42px 48px;
   font-weight: 900;
   text-shadow: -2px 1px 3px rgba(0, 0, 0, 0.6);
   letter-spacing: 3px;
@@ -62,6 +75,7 @@ form input {
   -webkit-border-radius: 6px 0px 0px 6px;
   -moz-border-radius: 6px 0px 0px 6px;
 }
+
 form button {
   width: 20%;
   height: 36px;
@@ -88,6 +102,7 @@ form img {
 /*Header Section  End*/
 
 /*Main Section Start*/
+/*Template Icon Container Start*/
 #icon-container {
   display: flex;
   flex-direction: column;
@@ -97,17 +112,14 @@ form img {
   color: #2e2e2f;
   font-size: 18px;
 }
-
+/*Template Icon Container End*/
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
-
-main hr {
-  align-self: stretch;
-}
-
 .movie-container {
   display: flex;
   flex-direction: row;
@@ -117,11 +129,9 @@ main hr {
   width: 50%;
   padding-left: 48px;
 }
-
 .movie-poster {
-  width: 10%;
+  width: 25%;
 }
-
 .movie-text-container {
   flex-grow: 1; /* Allow this container to take up the remaining space */
   padding-left: 24px;
@@ -132,19 +142,34 @@ main hr {
 .movie-title-container {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
 }
-
 .movie-title {
   font-size: 18px;
   font-weight: 900;
 }
-
+.add-watchlist-button {
+  background-color: #44c767;
+  border-radius: 48px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Impact;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 12px;
+  text-shadow: 0px 1px 0px #2f6627;
+  margin-right: 6px;
+}
+.add-watchlist-button:hover {
+  background-color: #ffffff;
+  color: #44c767;
+  transition: ease-in 0.1s;
+}
 .movie-imdb {
   font-size: 12px;
 }
-/*Movie Title Section End*/
-
 .movie-title-container img {
   margin: 0px 6px;
 }
@@ -156,23 +181,26 @@ main hr {
   flex-direction: row;
   font-size: 600;
 }
-
 .watchlist-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-left: 12px;
 }
-
+hr {
+  display: flex;
+  width: 50%;
+}
 .movie-time {
   padding-right: 12px;
 }
-
 .watchlist-container img {
   margin-right: 6px;
 }
+
 /*Movie Info Section End*/
 
+/*Movie Plot Section Start*/
 .movie-explonation {
   color: #a5a5a5;
 }
@@ -181,4 +209,12 @@ main hr {
   text-decoration: none;
   color: white;
 }
+/*Movie Plot Section End*/
+
 /*Main Section End*/
+.alert-text {
+  font-size: 24px;
+  color: white;
+  margin: 50%;
+  width: 100%;
+}
