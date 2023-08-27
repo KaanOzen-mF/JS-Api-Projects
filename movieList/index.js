@@ -38,6 +38,10 @@ const fetchApiData = async (movieName) => {
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault(); // Prevent the default form submission behavior
 
+  // Show the loader while fetching data
+  const loader = document.getElementById("loader");
+  loader.style.display = "flex";
+
   movieArray = [];
   const inputValue = movieSearchInput.value; // Get the value from the input field
   iconContainer.style.display = "none";
@@ -48,9 +52,12 @@ searchButton.addEventListener("click", async (e) => {
     // Fetch movie data and handle the response
     const movieData = await fetchApiData(inputValue);
     if (movieData && movieData.length > 0) {
+      loader.style.display = "none";
       displayMovies(movieData);
     } else {
       console.log("No movies found.");
+
+      loader.style.display = "none";
       displayAlert();
     }
   } catch (error) {
