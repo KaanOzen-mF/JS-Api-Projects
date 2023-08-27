@@ -205,9 +205,18 @@ hr {
   color: #a5a5a5;
 }
 
-.movie-explonation a {
+.movie-explonation button {
+  background-color: black;
+  border: none;
   text-decoration: none;
   color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.movie-explonation button:hover {
+  text-shadow: -2px 1px 3px rgba(255, 255, 255, 0.6);
 }
 /*Movie Plot Section End*/
 
@@ -218,3 +227,39 @@ hr {
   margin: 50%;
   width: 100%;
 }
+
+/*Read More Pop-up Section Start*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 64px 100px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 64px 100px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 64px 100px rgba(0, 0, 0, 1);
+  max-width: 80%;
+  color: #2e2e2f;
+}
+
+.popup-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*Read More Pop-up Section End*/
