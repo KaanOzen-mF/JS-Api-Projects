@@ -95,7 +95,7 @@ const displayMovies = (movies) => {
                 <p>
                   ${
                     movie.Plot ? movie.Plot : ""
-                  }<span><a href="">Read More</a></span>
+                  }<span><button class="read-more-btn">Read More</button></span>
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ const displayMovies = (movies) => {
           <hr>
           `;
         movieContainer.innerHTML += movieHtml;
-        // Attach event listener to the created button
+        // Attach event listener to the add watchlist button
         movieContainer
           .querySelectorAll(".add-watchlist-button")
           .forEach((button, index) => {
@@ -116,6 +116,22 @@ const displayMovies = (movies) => {
               saveToLocalStorage();
             });
           });
+
+        // Attach event listener to the created "Read More" buttons
+        movieContainer
+          .querySelectorAll(".read-more-btn")
+          .forEach((button, index) => {
+            button.addEventListener("click", () => {
+              // Display the full movie plot or take any desired action
+              const selectedMovie = movieArray[index];
+              console.log(selectedMovie);
+              openPopup(selectedMovie);
+            });
+          });
+
+        // Attach event listener to the close button of the popup
+        const popupCloseButton = document.getElementById("popup-close-button");
+        popupCloseButton.addEventListener("click", closePopup);
       });
     //Local Storage save function
     const saveToLocalStorage = () => {
@@ -127,4 +143,38 @@ const displayMovies = (movies) => {
 //If there no film accoring to searching words display alert function
 const displayAlert = () => {
   movieContainer.innerHTML = `<div class="alert-text">Unable to find what you’re looking for. Please try another search.</div>`;
+};
+
+// Function to open the pop-up and display movie details
+const openPopup = (movie) => {
+  const popupOverlay = document.getElementById("popup-overlay");
+  const popupContent = document.getElementById("popup-content");
+  const popupMovieDetails = document.getElementById("popup-movie-details");
+
+  popupMovieDetails.innerHTML = `
+    <h2>${movie.Title}</h2>
+    <p>Release Yer: ${movie.Released}</p>
+    <p>Runtime: ${movie.Runtime}</p>
+    <p>Genre: ${movie.Genre}</p>
+    <p>Director: ${movie.Director}</p>
+    <p>Writer: ${movie.Writer}</p>
+    <p>Actors: ${movie.Actors}</p>
+    <p>Country: ${movie.Country}</p>
+    <p>Awards: ${movie.Awards}</p>
+    <p>IMDb Rating: ${movie.imdbRating}</p>
+    <p>IMDb Votes: ${movie.imdbVotes}</p>
+    <p>Box Office: ${movie.BoxOffice}</p>
+    <p>${movie.Plot}</p>
+  `;
+
+  popupOverlay.style.display = "flex";
+
+  // Close the popup if the overlay is clicked
+  popupOverlay.addEventListener("click", closePopup);
+};
+
+// Function to close the pop-up
+const closePopup = () => {
+  const popupOverlay = document.getElementById("popup-overlay");
+  popupOverlay.style.display = "none";
 };
