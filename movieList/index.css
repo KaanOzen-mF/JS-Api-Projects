@@ -263,3 +263,60 @@ hr {
 }
 
 /*Read More Pop-up Section End*/
+
+/*Loader Animation Section Start*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-text {
+  margin: 5px auto;
+  color: #3d314a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+}
+
+.loader-filmstrip {
+  position: relative;
+  width: 56px;
+  height: 70px;
+  background: #fafafa;
+  z-index: -1;
+}
+
+.loader-filmstrip:before,
+.loader-filmstrip:after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  border-left: 5px dashed #4b4948;
+  animation: roll 20ms infinite;
+}
+
+.loader-filmstrip:before {
+  left: 5px;
+}
+
+.loader-filmstrip:after {
+  right: 5px;
+}
+
+@keyframes roll {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+/*Loader Animation Section End*/
