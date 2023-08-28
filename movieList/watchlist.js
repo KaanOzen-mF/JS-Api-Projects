@@ -79,6 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Remove the movie element from the DOM
         watchlistSection.removeChild(movieElement);
+        // Show the information popup
+        const infoPopup = document.getElementById("info-popup");
+        infoPopup.style.display = "block";
+
+        // Hide the information popup after a short delay
+        setTimeout(() => {
+          infoPopup.style.display = "none";
+        }, 2000); // Change the delay as needed
       });
     });
   } else {
