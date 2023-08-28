@@ -242,3 +242,17 @@ hr {
 }
 
 /*Read More Pop-up Section End*/
+
+/*Movie Removed Pop-up Section Start*/
+.info-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+/*Movie Removed Pop-up Section End*/
