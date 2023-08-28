@@ -117,10 +117,29 @@ const displayMovies = (movies) => {
             button.addEventListener("click", () => {
               // Display the movie details for the clicked button
               const selectedMovie = movieArray[index];
-              watchlist.push(selectedMovie);
 
-              //Save updated watchlist to local storage
-              saveToLocalStorage();
+              const isMovieInWatchlist = watchlist.some(
+                (movie) => movie.imdbID === selectedMovie.imdbID
+              );
+              // If the movie is not in the watchlist, add it and show the popup
+              if (!isMovieInWatchlist) {
+                // Show the information popup
+                const infoPopup = document.getElementById("info-popup");
+                infoPopup.style.display = "block";
+
+                // Hide the information popup after a short delay
+                setTimeout(() => {
+                  infoPopup.style.display = "none";
+                }, 2000); // Change the delay as needed
+
+                watchlist.push(selectedMovie);
+
+                // Save updated watchlist to local storage
+                saveToLocalStorage();
+              } else {
+                // Movie is already in the watchlist, show a different message
+                alert("This movie is already in your watchlist.");
+              }
             });
           });
 
@@ -131,7 +150,6 @@ const displayMovies = (movies) => {
             button.addEventListener("click", () => {
               // Display the full movie plot or take any desired action
               const selectedMovie = movieArray[index];
-              console.log(selectedMovie);
               openPopup(selectedMovie);
             });
           });
@@ -159,19 +177,20 @@ const openPopup = (movie) => {
   const popupMovieDetails = document.getElementById("popup-movie-details");
 
   popupMovieDetails.innerHTML = `
-    <h2>${movie.Title}</h2>
-    <p>Release Yer: ${movie.Released}</p>
-    <p>Runtime: ${movie.Runtime}</p>
-    <p>Genre: ${movie.Genre}</p>
-    <p>Director: ${movie.Director}</p>
-    <p>Writer: ${movie.Writer}</p>
-    <p>Actors: ${movie.Actors}</p>
-    <p>Country: ${movie.Country}</p>
-    <p>Awards: ${movie.Awards}</p>
-    <p>IMDb Rating: ${movie.imdbRating}</p>
-    <p>IMDb Votes: ${movie.imdbVotes}</p>
-    <p>Box Office: ${movie.BoxOffice}</p>
-    <p>${movie.Plot}</p>
+  <h2>${movie.Title}</h2>
+  <p><span>Release Yer:</span> ${movie.Released}</p>
+  <p><span>Runtime: </span>${movie.Runtime}</p>
+  <p><span>Genre: </span> ${movie.Genre}</p>
+  <p><span>Director: </span>${movie.Director}</p>
+  <p><span>Writer: </span>${movie.Writer}</p>
+  <p><span>Actors: </span>${movie.Actors}</p>
+  <p><span>Country: </span>${movie.Country}</p>
+  <p><span>Awards: </span>${movie.Awards}</p>
+  <p><span>IMDb Rating: </span>${movie.imdbRating}</p>
+  <p><span>IMDb Votes: </span>${movie.imdbVotes}</p>
+  <p><span>Box Office: </span>${movie.BoxOffice}</p>
+  <p><span><u>Movie Plot</u></span></p>
+  <p>${movie.Plot}</p>
   `;
 
   popupOverlay.style.display = "flex";
