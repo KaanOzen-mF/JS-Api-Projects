@@ -1,7 +1,7 @@
 ## Homescreen
 
-![Alt text](image.png)
+![Alt text](./img/image.png)
 
 ## Loading Screen
 
-![Alt text](image-1.png)
+![Alt text](./img/image-1.png)
