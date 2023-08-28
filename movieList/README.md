@@ -1,17 +1,53 @@
-## Search Movie Screen
+# Movie List App
 
-![Alt text](./img/image.png)
-![Alt text](image.png)
+This is a simple movie listing application. The user provides the movie they want to watch or add to their watchlist as input to the application. The API used to list the movies in the application is called OMDBApi.
 
-## Loading Screen
+## TABLE OF CONTENTS
 
-![Alt text](./img/image-1.png)
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [Process](#process)
+  - [Overview](#process-overview)
+- [Built With](#built-with)
 
-## Errors Screen
+## [Overview](#overview)
 
-![Alt text](./img/image-2.png)
-![Alt text](./img/iamge-3.png)
+Users are allowed to:
 
-## Watchlist Screen
+- select the movie from search input
+- add watchlist movie and remove watchlist movie
 
-![Alt text](./img/image-5.png)
+## [Screenshots](#screenshot)
+
+### Search Movie Screen
+
+![Search Screen-1](./img/image.png)
+![Search Screen-2](image.png)
+
+### Loading Screen
+
+![Loading Animation Screen](./img/image-1.png)
+
+### Errors Screen
+
+![Search Page Error Screen](./img/image-2.png)
+![Watchlist Error Screen](./img/iamge-3.png)
+
+### Watchlist Screen
+
+![Watchlist Screen](./img/image-5.png)
+
+![image](https://github.com/KaanOzen-mF/JS-Api-Projects/assets/74866163/a9cbe8ef-3df9-4300-ac11-64c07de7ad99)
+
+## [Links](#links)
+
+[OMDb API](https://www.omdbapi.com/)
+
+## [Overview](#process-overview)
+
+## [Built With](#built-with)
+
+- Asynchronous JavaScript
+- Semantic HTML5 markup
+- Flexbox
