@@ -38,8 +38,6 @@ Users are allowed to:
 
 ![Watchlist Screen](./img/image-5.png)
 
-![image](https://github.com/KaanOzen-mF/JS-Api-Projects/assets/74866163/a9cbe8ef-3df9-4300-ac11-64c07de7ad99)
-
 ## [Links](#links)
 
 [OMDb API](https://www.omdbapi.com/)
