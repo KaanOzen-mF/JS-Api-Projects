@@ -42,6 +42,7 @@ main {
   box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
   -moz-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+  opacity: 0.8;
 }
 
 #coin-name-container {
@@ -63,11 +64,14 @@ main {
 
 #weather-info > p {
   text-transform: capitalize;
+  font-weight: 600;
 }
 /*Top Element End*/
 /*Time Element Start*/
 .time-element {
   text-align: center;
+
+  text-shadow: 0px 0px 40px #a8a8a8;
 }
 /*Time Element End*/
 /*Main Section End*/
