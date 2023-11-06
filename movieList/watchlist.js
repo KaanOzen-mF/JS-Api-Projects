@@ -42,7 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
                   }<span><button class="read-more-btn">Read More</button></span>
                 </p>
               </div>
+              
+          <hr>
             </div>
+
+            
         `;
 
       // Append the movie element to the watchlist section
@@ -123,6 +127,7 @@ const openPopup = (movie) => {
     <p><span>Box Office: </span>${movie.BoxOffice}</p>
     <p><span><u>Movie Plot</u></span></p>
     <p>${movie.Plot}</p>
+    
   `;
 
   popupOverlay.style.display = "flex";
