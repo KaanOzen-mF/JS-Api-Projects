@@ -70,7 +70,7 @@ const displayMovies = (movies) => {
   movieContainer.innerHTML = "";
   movies.map((movieDetail) => {
     //Fetch movie detail according to movie name using movie name
-    fetch(`http://www.omdbapi.com/?apikey=cf0fdf8&i=${movieDetail.imdbID}`)
+    fetch(`https://www.omdbapi.com/?apikey=cf0fdf8&i=${movieDetail.imdbID}`)
       .then((res) => res.json())
       .then((movie) => {
         movieArray.push(movie);
