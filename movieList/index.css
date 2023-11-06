@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;700&display=swap");
 
-html,
 body {
   margin: 0;
   padding: 0;
@@ -23,8 +22,6 @@ a:hover {
 
 /*Header Section  Start*/
 header {
-  width: 50vw;
-  height: 14vw;
   background-color: rgba(62, 62, 61, 0.9);
   background-image: url("./img/Design.png");
   background-position: right 35% bottom 80%;
@@ -37,6 +34,7 @@ header {
 header h1 {
   font-size: 64px;
 }
+
 #header-text-container {
   width: 100%;
   display: flex;
@@ -50,8 +48,8 @@ header h1 {
 }
 
 #search-bar {
-  width: 60%;
-  height: 36px;
+  width: 90%;
+  height: 26px;
   border-radius: 8px;
   margin: auto;
 }
@@ -107,8 +105,9 @@ form img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 25vw;
   justify-content: center; /* Add this line to horizontally center the icon */
+  height: 30vw;
+  width: 100%;
   color: #2e2e2f;
   font-size: 18px;
 }
@@ -338,3 +337,54 @@ hr {
   border-radius: 6px;
 }
 /*Movie Added Pop-up Section End*/
+
+/* Responsive Design Start*/
+
+/* PHONE VERSION */
+@media only screen and (max-width: 767px) {
+  header {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  #watchlist {
+    font-size: 12px;
+  }
+
+  #search-bar {
+    width: 70%;
+    height: 18px;
+  }
+
+  #icon-container {
+    height: 100vw;
+  }
+
+  .movie-container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 0 0;
+    width: 100%;
+  }
+}
+
+/* TABLET VERSION */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  header h1 {
+    font-size: 48px;
+  }
+
+  #watchlist {
+    font-size: 24px;
+  }
+
+  #search-bar {
+    width: 90%;
+    height: 24px;
+  }
+}
+
+/* Responsive Design End*/

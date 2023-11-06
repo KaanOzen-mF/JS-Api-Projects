@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;700&display=swap");
 
-html,
 body {
   margin: 0;
   padding: 0;
@@ -23,8 +22,6 @@ a:hover {
 
 /*Header Section Start*/
 header {
-  width: 50vw;
-  height: 14vw;
   background-color: rgba(62, 62, 61, 0.9);
   background-image: url("./img/Design.png");
   background-position: right 35% bottom 80%;
@@ -256,3 +253,66 @@ hr {
   border-radius: 6px;
 }
 /*Movie Removed Pop-up Section End*/
+
+/* Responsive Design Start*/
+/* PHONE VERSION */
+@media only screen and (max-width: 767px) {
+  header {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  #watchlist {
+    font-size: 12px;
+  }
+
+  #search-bar {
+    width: 70%;
+    height: 18px;
+  }
+
+  #icon-container {
+    height: 100vw;
+  }
+
+  .watchlist-container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 0 0;
+    width: 100%;
+  }
+
+  .alert-text p {
+    font-size: 16px;
+  }
+
+  .alert-button-container button {
+    border-radius: 32px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* TABLET VERSION */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  header h1 {
+    font-size: 48px;
+  }
+
+  #watchlist {
+    font-size: 24px;
+  }
+
+  #search-bar {
+    width: 90%;
+    height: 24px;
+  }
+}
+
+/* Responsive Design End*/
